@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Lake Amour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+      * {
+        scroll-behavior: smooth;
+      }
+
+      .font-playfair {
+        font-family: "Playfair Display", serif;
+      }
+      .font-inter {
+        font-family: "Inter", sans-serif;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #9099c1 0%, #b39dc8 100%);
+      }
+
+      .menu-card {
+        backdrop-filter: blur(20px);
+        background: rgb(241, 234, 234);
+        border: 1px solid rgba(221, 212, 212, 0.877);
+      }
+
+      .floating-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes pulse-glow {
+        from {
+          box-shadow: 0 4px 20px rgba(254, 254, 255, 0.4);
+        }
+        to {
+          box-shadow: 0 8px 40px rgba(102, 126, 234, 0.8);
+        }
+      }
+
+      .slide-in-left {
+        animation: slideInLeft 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      .slide-in-right {
+        animation: slideInRight 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      @keyframes slideInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="font-inter bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-white/10 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex items-center space-x-4">
+            <div
+              class="h-12 w-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-0.5"
+            >
+              <img
+                src="logo.png"
+                alt="Restaurant Logo"
+                class="h-full w-full object-cover rounded-full"
+              />
+            </div>
+            <span
+              class="font-playfair text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+            >
+              The Lake Amour
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Menu Preview Section -->
+    <section
+      id="menu"
+      class="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative"
+    >
+      <div class="container mx-auto px-6">
+        <h2 class="text-2xl font-bold text-center text-white mb-14 pt-4">
+          Our Menu
+        </h2>
+
+        <!-- Category Navigation -->
+        <div
+          class="sticky top-20 bg-gray-900/90 backdrop-blur-md z-40 overflow-x-auto whitespace-nowrap py-3 shadow-md"
+        >
+          <div class="flex space-x-6 px-4">
+            <a
+              href="#pizza"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Pizza</a
+            >
+            <a
+              href="#pasta"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Pasta</a
+            >
+            <a
+              href="#soup"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Soup</a
+            >
+            <a
+              href="#salad"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Crunch & Munch</a
+            >
+            <a
+              href="#starters"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Starters</a
+            >
+            <a
+              href="#chinese"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Chinese</a
+            >
+            <a
+            href="#sandwich"
+            class="text-white font-medium hover:text-orange-300 transition"
+            >Sandwich</a
+            >
+            <a
+              href="#maggie"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Maggie</a
+            >
+            <a
+              href="#curd"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Curd Creations</a
+            >
+            <a
+              href="#drinks"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Beverages</a
+            >
+            <a
+              href="#main-course"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Main Course</a
+            >
+            <a
+              href="#roti"
+              class="text-white font-medium hover:text-orange-300 transition pr-2"
+              >Roti</a
+            >
+            <a
+              href="#dessert"
+              class="text-white font-medium hover:text-orange-300 transition"
+              >Dessert</a
+            >
+            <!-- <a href="#rice" class="text-white font-medium hover:text-black transition">Rice</a> -->
+            <!-- <a href="#tandoor" class="text-white font-medium hover:text-black transition">Tandoor</a> -->
+          </div>
+        </div>
+
+        <!-- One Column Layout -->
+        <div class="flex flex-col items-center gap-6">
+          <!-- Pizza -->
+          <span id="pizza" class="text-2xl font-bold text-white">Pizza</span>
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Margheretta Pizza
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹180</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                FarmHouse Pizza
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹190</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Tandoori Paneer Tikka Pizza
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹220</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Paneer Makhani Pizza
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹230</p>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Korean Style Pizza
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹230</p>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Customized Pizza
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹250</p>
+            </div>
+            <p class="text-gray-900 text-sm">
+              Your pizza, your way! 🍕 Choose 2 or even 4 sauces on one pizza
+              and create your own flavor masterpiece!
+            </p>
+          </div>
+          <!-- Pasta -->
+          <span id="pasta" class="text-3xl font-bold text-white">Pasta</span>
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                White Sauce Pasta
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹190</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Red Sauce Pasta
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹190</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Pink Pasta
+              </h3>
+              <p class="text-black font-bold text-sm mb-2">₹190</p>
+            </div>
+          </div>
+          <!-- Soup -->
+          <span id="soup" class="text-3xl font-bold text-white">Soup</span>
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Tomato Soup
+              </h3>
+              <p class="text-black font-bold text-sm">₹110</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Vegetable Soup Hot & Sour
+              </h3>
+              <p class="text-black font-bold text-sm">₹110</p>
+            </div>
+          </div>
+          <!-- Salad -->
+          <span id="salad" class="text-3xl font-bold text-white"
+            >Crunch & Munch</span
+          >
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Green Salad
+              </h3>
+              <p class="text-black font-bold text-sm">₹75</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Papad Masala(Roasted/Fried)
+              </h3>
+              <p class="text-black font-bold text-sm">₹35</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Papad (Roasted/Fried)
+              </h3>
+              <p class="text-black font-bold text-sm">₹30</p>
+            </div>
+          </div>
+          <!-- Starters -->
+          <span id="starters" class="text-3xl font-bold text-white"
+            >Starters</span
+          >
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Paneer Cutlets
+              </h3>
+              <p class="text-black font-bold text-sm">₹200</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Cheese balls
+              </h3>
+              <p class="text-black font-bold text-sm">₹200</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Hara Bhara Kabab
+              </h3>
+              <p class="text-black font-bold text-sm">₹180</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Loaded Fries
+              </h3>
+              <p class="text-black font-bold text-sm">₹170/₹160</p>
+            </div>
+            <p class="text-gray-900 text-sm">Korean Style / Pizza Style</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Momos</h3>
+              <p class="text-black font-bold text-sm">₹80/₹100/₹130</p>
+            </div>
+            <p class="text-gray-900 text-sm">Steam / Fried / Kurkure</p>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Crispy Corn
+              </h3>
+              <p class="text-black font-bold text-sm">₹120</p>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Peri Peri Fries
+              </h3>
+              <p class="text-black font-bold text-sm">₹110</p>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Garlic Bread
+              </h3>
+              <p class="text-black font-bold text-sm">₹100/₹120</p>
+            </div>
+            <p class="text-gray-900 text-sm">Cheese / Plain</p>
+          </div>
+          <!-- Card 9 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Spring Rolls
+              </h3>
+              <p class="text-black font-bold text-sm">₹100</p>
+            </div>
+          </div>
+          <!-- Card 10 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                French Fries
+              </h3>
+              <p class="text-black font-bold text-sm">₹90</p>
+            </div>
+          </div>
+          <!-- Card 11 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Peanut Masala
+              </h3>
+              <p class="text-black font-bold text-sm">₹80</p>
+            </div>
+          </div>
+
+          <!-- Chinese -->
+          <span id="chinese" class="text-3xl font-bold text-white"
+            >Chinese</span
+          >
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Chilli Paneer
+              </h3>
+              <p class="text-black font-bold text-sm">₹230</p>
+            </div>
+            <p class="text-gray-900 text-sm">Dry / Gravy</p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Manchurian
+              </h3>
+              <p class="text-black font-bold text-sm">₹180</p>
+            </div>
+            <p class="text-gray-900 text-sm">Dry / Gravy</p>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Smokey Chilli Potato
+              </h3>
+              <p class="text-black font-bold text-sm">₹170</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Lemon Garlic Noodles
+              </h3>
+              <p class="text-black font-bold text-sm">₹160</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Chilli Potato
+              </h3>
+              <p class="text-black font-bold text-sm">₹150</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Hakka Noodles
+              </h3>
+              <p class="text-black font-bold text-sm">₹150</p>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Noodles Veg
+              </h3>
+              <p class="text-black font-bold text-sm">₹150</p>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Fried Rice
+              </h3>
+              <p class="text-black font-bold text-sm">₹140</p>
+            </div>
+          </div>
+
+          <!-- Sandwich -->
+          <span id="sandwich" class="text-3xl font-bold text-white"
+            >Sandwich</span
+          >
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Pizza Sandwich
+              </h3>
+              <p class="text-black font-bold text-sm">₹150</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Cheese Spanich Sandwich
+              </h3>
+              <p class="text-black font-bold text-sm">₹140</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Vegetable Sandwich
+              </h3>
+              <p class="text-black font-bold text-sm">₹130</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Tandoori Paneer Sandwich
+              </h3>
+              <p class="text-black font-bold text-sm">₹155</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Aalu Masala Sandwich
+              </h3>
+              <p class="text-black font-bold text-sm">₹120</p>
+            </div>
+          </div>
+          
+          <!-- Maggie -->
+          <span id="maggie" class="text-3xl font-bold text-white">Maggie</span>
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Cheese Maggie
+              </h3>
+              <p class="text-black font-bold text-sm">₹120</p>
+            </div>
+            <p class="text-gray-900 text-sm">
+              Classic noodles with cheese and spices.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Masala Maggie
+              </h3>
+              <p class="text-black font-bold text-sm">₹90</p>
+            </div>
+            <p class="text-gray-900 text-sm">
+              Spicy noodles with a blend of Indian spices.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Maggie Special
+              </h3>
+              <p class="text-black font-bold text-sm">₹110</p>
+            </div>
+            <p class="text-gray-900 text-sm">
+              A special blend of spices and ingredients for a unique flavor.
+            </p>
+          </div>
+          <!-- Curd -->
+          <span id="curd" class="text-3xl font-bold text-white"
+            >Curd Creations</span
+          >
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Veggie Rayta
+              </h3>
+              <p class="text-black font-bold text-sm">₹60</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Boondi Rayta
+              </h3>
+              <p class="text-black font-bold text-sm">₹50</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Plain Rayta
+              </h3>
+              <p class="text-black font-bold text-sm">₹40</p>
+            </div>
+          </div>
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Butter Milk
+              </h3>
+              <p class="text-black font-bold text-sm">₹20</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Curd</h3>
+              <p class="text-black font-bold text-sm">₹30</p>
+            </div>
+          </div>
+
+          <!-- Drinks -->
+          <span id="drinks" class="text-3xl font-bold text-white"
+            >Beverages</span
+          >
+          <span id="drinks" class="text-xl font-bold text-white"
+            >Customize your shake – additional scoops at ₹30 per scoop.</span
+          >
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Water Bottle
+              </h3>
+              <p class="text-black font-bold text-sm">₹30</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Brownie Shake
+              </h3>
+              <p class="text-black font-bold text-sm">₹170</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Kitkat Shake
+              </h3>
+              <p class="text-black font-bold text-sm">₹140</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Oreo Shake
+              </h3>
+              <p class="text-black font-bold text-sm">₹140</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Strawberry Shake
+              </h3>
+              <p class="text-black font-bold text-sm">₹140</p>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Mint Mojito
+              </h3>
+              <p class="text-black font-bold text-sm">₹110</p>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Blue Lagoon
+              </h3>
+              <p class="text-black font-bold text-sm">₹110</p>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Cold Coffee
+              </h3>
+              <p class="text-black font-bold text-sm">₹90</p>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Hot Coffee
+              </h3>
+              <p class="text-black font-bold text-sm">₹50</p>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Milk</h3>
+              <p class="text-black font-bold text-sm">₹70</p>
+            </div>
+          </div>
+          <!-- Card 9 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Lemon Tea</h3>
+              <p class="text-black font-bold text-sm">₹30</p>
+            </div>
+          </div>
+          <!-- Card 10 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Tea</h3>
+              <p class="text-black font-bold text-sm">₹30</p>
+            </div>
+          </div>
+          <!-- Main Course -->
+          <span id="main-course" class="text-3xl font-bold text-white"
+            >Main Course</span
+          >
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Kaju Kari</h3>
+              <p class="text-black font-bold text-sm">₹260</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Kadai Paneer
+              </h3>
+              <p class="text-black font-bold text-sm">₹250</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Shahi Paneer
+              </h3>
+              <p class="text-black font-bold text-sm">₹250</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Matar Paneer
+              </h3>
+              <p class="text-black font-bold text-sm">₹250</p>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Malai Kofta
+              </h3>
+              <p class="text-black font-bold text-sm">₹250</p>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Palak Paneer
+              </h3>
+              <p class="text-black font-bold text-sm">₹250</p>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Dal Tadka</h3>
+              <p class="text-black font-bold text-sm">₹200</p>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Dal Fry</h3>
+              <p class="text-black font-bold text-sm">₹200</p>
+            </div>
+          </div>
+          <!-- Card 9 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Soya Chaap Masala
+              </h3>
+              <p class="text-black font-bold text-sm">₹200</p>
+            </div>
+          </div>
+          <!-- Card 10 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Dal Makhani
+              </h3>
+              <p class="text-black font-bold text-sm">₹200</p>
+            </div>
+          </div>
+          <!-- Card 11 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Lehsuni Palak
+              </h3>
+              <p class="text-black font-bold text-sm">₹190</p>
+            </div>
+          </div>
+          <!-- Card 12 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Mix Veg</h3>
+              <p class="text-black font-bold text-sm">₹180</p>
+            </div>
+          </div>
+          <!-- Card 13 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Sev Tamatar
+              </h3>
+              <p class="text-black font-bold text-sm">₹170</p>
+            </div>
+          </div>
+          <!-- Card 14 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Veg Kohlapuri
+              </h3>
+              <p class="text-black font-bold text-sm">₹160</p>
+            </div>
+          </div>
+          <!-- Card 15 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Jeera Aloo
+              </h3>
+              <p class="text-black font-bold text-sm">₹130</p>
+            </div>
+          </div>
+          <!-- Card 16 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Veg Pulao</h3>
+              <p class="text-black font-bold text-sm">₹130</p>
+            </div>
+          </div>
+          <!-- Card 16 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Jeera Rice
+              </h3>
+              <p class="text-black font-bold text-sm">₹110</p>
+            </div>
+          </div>
+          <!-- Card 16 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Steam Rice
+              </h3>
+              <p class="text-black font-bold text-sm">₹90</p>
+            </div>
+          </div>
+
+          <!-- Roti -->
+          <span id="roti" class="text-3xl font-bold text-white">Roti</span>
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">Tawa Roti</h3>
+              <p class="text-black font-bold text-sm">₹12/15</p>
+            </div>
+            <p class="text-gray-900 text-sm">Normal / Butter</p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Plain Paratha
+              </h3>
+              <p class="text-black font-bold text-sm">₹20</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Lacha Paratha
+              </h3>
+              <p class="text-black font-bold text-sm">₹40</p>
+            </div>
+          </div>
+<!-- Dessert -->
+          <span id="dessert" class="text-3xl font-bold text-white"
+            >Dessert</span
+          >
+          <!-- Card 1 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Gulab Jamun 
+              </h3>
+              <p class="text-black font-bold text-sm">₹50</p>
+            </div>
+            <p class="text-gray-900 text-xs">With Ice-cream - ₹80</p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Brownie 
+              </h3>
+              <p class="text-black font-bold text-sm">₹80</p>
+            </div>
+            <p class="text-gray-900 text-sm">
+              With Ice-cream - ₹110
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="menu-card w-80 h-auto w-full rounded-3xl p-4 hover:scale-105 transform transition-all duration-300 group shadow-xl"
+          >
+            <div class="flex flex-row justify-between items-center gap-auto">
+              <h3 class="text-base font-semibold text-black mb-2">
+                Chocolate Ice-cream
+              </h3>
+              <p class="text-black font-bold text-sm">₹40</p>
+            </div>
+          </div>
+          <!-- End of Menu -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 gap-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-4 mb-4">
+              <div
+                class="h-10 w-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-0.5"
+              >
+                <img
+                  src="logo.png"
+                  alt="Logo"
+                  class="h-full w-full object-cover rounded-full"
+                />
+              </div>
+              <span class="font-playfair text-xl font-bold"
+                >The Lake Amour</span
+              >
+            </div>
+            <p class="text-gray-400">Exceptional dining experiences</p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Contact</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>Sec-12,Opposite Nela Talab , 3rd floor Hotel BP Lake View</li>
+              <li>Savina,Udaipur</li>
+              <li>+91 9460810122</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.instagram.com/the_lake_amour?igsh=eG1oaXNyMnhuNW10"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
+              >
+                <span class="sr-only">Instagram</span>@
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>
+            &copy; 2025 The Lake Amour Restaurant & Cafe. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = "running";
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document
+        .querySelectorAll(".slide-in-left, .slide-in-right, .fade-in-up")
+        .forEach((el) => {
+          el.style.animationPlayState = "paused";
+          observer.observe(el);
+        });
+    </script>
+  </body>
+</html>
